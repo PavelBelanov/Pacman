@@ -3,7 +3,7 @@ package com.bel.pacman.model;
 import com.bel.pacman.util.MapLoader;
 
 public class Maze {
-    private String[] MAP = MapLoader.mapReader("assets/maps/demo field.txt");
+    private String[] MAP = MapLoader.mapReader("assets/maps/My game field.txt");
 
     private int height;
     private int width;

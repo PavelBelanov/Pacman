@@ -2,7 +2,6 @@ package com.bel.pacman.model;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.bel.pacman.MyPacmanGame;
 
 public class MazeRenderer {
     private Maze maze;
