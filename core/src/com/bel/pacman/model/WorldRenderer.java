@@ -16,13 +16,15 @@ public class WorldRenderer {
     private OrthographicCamera camera;
     public static final int BLOCK_SIZE = 40;
 
+
     public WorldRenderer(MyPacmanGame myPacmanGame, World world) {
         this.myPacmanGame = myPacmanGame;
         this.world = world;
         camera = new OrthographicCamera();
-        camera.setToOrtho(false, MyPacmanGame.WIDTH, MyPacmanGame.HEIGHT);
+        camera.setToOrtho(false, world.getMaze().getWidth()*BLOCK_SIZE, world.getMaze().getHeight()*BLOCK_SIZE);
         mazeRenderer = new MazeRenderer(myPacmanGame.batch, world.getMaze());
         pacmanImg = new Texture("pacmanAnimation/pacRound.png");
+
     }
 
 
@@ -43,7 +45,6 @@ public class WorldRenderer {
         }
         if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
             pacmanImg = new Texture("pacmanAnimation/pmRO.png");
-
             pacman.setNextDirection(Pacman.DIRECTION_RIGHT);
         }
 
@@ -56,7 +57,7 @@ public class WorldRenderer {
         batch.setProjectionMatrix(camera.combined);
         batch.begin();
         Vector2 pos = world.getPacman().getPosition();
-        batch.draw(pacmanImg, pos.x - WorldRenderer.BLOCK_SIZE / 2, MyPacmanGame.HEIGHT - pos.y - WorldRenderer.BLOCK_SIZE / 2);
+        batch.draw(pacmanImg, pos.x - WorldRenderer.BLOCK_SIZE / 2, world.getMaze().getHeight()*WorldRenderer.BLOCK_SIZE - pos.y - WorldRenderer.BLOCK_SIZE / 2);
         batch.end();
     }
 }

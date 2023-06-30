@@ -1,7 +1,6 @@
 package com.bel.pacman.screen;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.GL20;
 import com.bel.pacman.MyPacmanGame;

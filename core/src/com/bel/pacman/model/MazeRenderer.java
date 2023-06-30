@@ -22,7 +22,7 @@ public class MazeRenderer {
         for(int i = 0; i < maze.getHeight(); i++) {
             for(int j = 0; j < maze.getWidth(); j++) {
                 int x = j * WorldRenderer.BLOCK_SIZE;
-                int y = MyPacmanGame.HEIGHT - (i * WorldRenderer.BLOCK_SIZE) - WorldRenderer.BLOCK_SIZE;
+                int y = maze.getHeight()*WorldRenderer.BLOCK_SIZE - (i * WorldRenderer.BLOCK_SIZE) - WorldRenderer.BLOCK_SIZE;
 
                 if(maze.hasWallAt(i, j)) {
                     batch.draw(wallImg, x, y);

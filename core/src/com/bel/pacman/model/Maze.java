@@ -1,21 +1,10 @@
 package com.bel.pacman.model;
 
+import com.bel.pacman.util.MapLoader;
+
 public class Maze {
-    private String[] MAP = new String [] {
-            "####################",
-            "#..................#",
-            "#.###.###..###.###.#",
-            "#.#...#......#...#.#",
-            "#.#.###.####.###.#.#",
-            "#.#.#..........#.#.#",
-            "#.....###..###.....#",
-            "#.#.#..........#.#.#",
-            "#.#.###.####.###.#.#",
-            "#.#...#......#...#.#",
-            "#.###.###..###.###.#",
-            "#..................#",
-            "####################"
-    };
+    private String[] MAP = MapLoader.mapReader("assets/maps/demo field.txt");
+
     private int height;
     private int width;
     private boolean [][] hasDots;

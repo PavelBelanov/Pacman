@@ -6,8 +6,8 @@ import com.bel.pacman.screen.GameScreen;
 
 public class MyPacmanGame extends Game {
     public SpriteBatch batch;
-    public static final int WIDTH = 800;
-    public static final int HEIGHT = 520;
+//    public static final int WIDTH = 800;
+//    public static final int HEIGHT = 520;
 
 
     @Override
