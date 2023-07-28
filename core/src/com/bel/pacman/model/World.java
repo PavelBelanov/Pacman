@@ -1,16 +1,13 @@
 package com.bel.pacman.model;
 
-import com.bel.pacman.MyPacmanGame;
 
 public class World {
-    private Pacman pacman;
-    private MyPacmanGame myPacmanGame;
     private Maze maze;
+    private Pacman pacman;
 
 
-    public World(MyPacmanGame myPacmanGame) {
+    public World() {
         maze = new Maze();
-        this.myPacmanGame = myPacmanGame;
         pacman = new Pacman(60, 60, maze);
     }
 
@@ -22,4 +19,11 @@ public class World {
         return maze;
     }
 
+    public void setMaze(Maze maze) {
+        this.maze = maze;
+    }
+
+    public void setPacman(Pacman pacman) {
+        this.pacman = pacman;
+    }
 }

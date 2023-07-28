@@ -15,10 +15,10 @@ public class PacmanAnimation {
 
 
     public PacmanAnimation() {
-        pacDown = new Texture("assets/pacmanAnimation/pacDown.png");
-        pacLeft = new Texture("assets/pacmanAnimation/pacLeft.png");
-        pacRight = new Texture("assets/pacmanAnimation/pacRight.png");
-        pacUp = new Texture("assets/pacmanAnimation/pacUp.png");
+        pacDown = new Texture("D:\\git\\PacTest\\test\\assets\\pacmanAnimation\\pacDown.png");
+        pacLeft = new Texture("D:\\git\\PacTest\\test\\assets\\pacmanAnimation\\pacLeft.png");
+        pacRight = new Texture("D:\\git\\PacTest\\test\\assets\\pacmanAnimation\\pacRight.png");
+        pacUp = new Texture("D:\\git\\PacTest\\test\\assets\\pacmanAnimation\\pacUp.png");
     }
 
 

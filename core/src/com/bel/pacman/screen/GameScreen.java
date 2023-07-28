@@ -16,7 +16,7 @@ public class GameScreen extends ScreenAdapter {
 
     public GameScreen(MyPacmanGame myPacmanGame) {
         this.myPacmanGame = myPacmanGame;
-        world = new World(myPacmanGame);
+        world = new World();
         worldRenderer = new WorldRenderer(myPacmanGame, world);
     }
 

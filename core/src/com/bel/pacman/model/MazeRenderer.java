@@ -12,8 +12,8 @@ public class MazeRenderer {
     public MazeRenderer(SpriteBatch batch, Maze maze) {
         this.maze = maze;
         this.batch = batch;
-        wallImg = new Texture("blocImg.png");
-        dotImg = new Texture("pillet.png");
+        wallImg = new Texture("D:\\git\\PacTest\\test\\assets\\blocImg.png");
+        dotImg = new Texture("D:\\git\\PacTest\\test\\assets\\pillet.png");
     }
 
     public void render() {

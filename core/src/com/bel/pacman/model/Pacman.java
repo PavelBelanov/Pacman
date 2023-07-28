@@ -21,6 +21,8 @@ public class Pacman {
             {-1, 0}
     };
 
+    public Pacman() {
+    }
 
     public Pacman(int x, int y, Maze maze) {
         position = new Vector2(x, y);
@@ -75,5 +77,6 @@ public class Pacman {
     private int getColumn() {
         return ((int) position.x) / WorldRenderer.BLOCK_SIZE;
     }
+
 
 }

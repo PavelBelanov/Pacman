@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 import com.bel.pacman.MyPacmanGame;
+import com.bel.pacman.client.Network;
 import com.bel.pacman.util.PacmanAnimation;
 
 public class WorldRenderer {
@@ -20,16 +21,18 @@ public class WorldRenderer {
     private float stateTime;
     private int width, height;
     public static final int BLOCK_SIZE = 40;
+//    private Network network;
 
 
     public WorldRenderer(MyPacmanGame myPacmanGame, World world) {
         this.myPacmanGame = myPacmanGame;
+//        network = new Network();
         this.world = world;
         width = world.getMaze().getWidth();
         height = world.getMaze().getHeight();
         camera = new OrthographicCamera();
         camera.setToOrtho(false, width * BLOCK_SIZE, height * BLOCK_SIZE);
-        mazeRenderer = new MazeRenderer(myPacmanGame.batch, world.getMaze());
+        mazeRenderer = new MazeRenderer(myPacmanGame.batch,world.getMaze());
         stateTime = 0f;
         pacmanAnimation = new PacmanAnimation();
         pacmanFootage = pacmanAnimation.getPacRight();
@@ -40,7 +43,7 @@ public class WorldRenderer {
         Pacman pacman = world.getPacman();
         pacman.update();
         if (Gdx.input.isKeyPressed(Input.Keys.UP)) {
-        pacmanFootage = pacmanAnimation.getPacUp();
+            pacmanFootage = pacmanAnimation.getPacUp();
             pacman.setNextDirection(Pacman.DIRECTION_UP);
         }
         if (Gdx.input.isKeyPressed(Input.Keys.DOWN)) {
@@ -64,10 +67,10 @@ public class WorldRenderer {
         camera.update();
         batch.setProjectionMatrix(camera.combined);
         stateTime += Gdx.graphics.getDeltaTime();
-        TextureRegion currentFrame = pacmanFootage.getKeyFrame(stateTime,true);
+        TextureRegion currentFrame = pacmanFootage.getKeyFrame(stateTime, true);
         batch.begin();
         Vector2 pos = world.getPacman().getPosition();
-        batch.draw(currentFrame, pos.x - WorldRenderer.BLOCK_SIZE / 2, world.getMaze().getHeight() * WorldRenderer.BLOCK_SIZE - pos.y - WorldRenderer.BLOCK_SIZE / 2);
+        batch.draw(currentFrame, pos.x - BLOCK_SIZE / 2, world.getMaze().getHeight() * WorldRenderer.BLOCK_SIZE - pos.y - BLOCK_SIZE / 2);
         batch.end();
     }
 }

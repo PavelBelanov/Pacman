@@ -8,6 +8,7 @@ import java.util.ArrayList;
 public class MapLoader {
     public static String[] mapReader(String filePath) {
         ArrayList<String> list = new ArrayList<>();
+
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             while (br.ready()) {
                 list.add(br.readLine());
